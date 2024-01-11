@@ -13,6 +13,7 @@ class TestSectionConstructor:
         #1. элемент "Булки" уже по умолчанию установлен на стартовой странице,поэтому..
         #2. прокрутить страницу вниз, таб переключится с элемента "Булки" на "Начинки"
         #3. Нажать на раздел "Булки", чтобы попасть в нужный раздел,тем самым переключив кнопку
+        #4. в качестве assert использую ссылку 'https://stellarburgers.nomoreparties.site/', как подтверждение, что не попала на др страницу
 
         element = driver.find_element(*Locators.ELEMENT_FILLINGS_FIRST)
         driver.execute_script("arguments[0].scrollIntoView();", element)
