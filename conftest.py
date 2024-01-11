@@ -2,18 +2,35 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-from Sprint.constants import Constants
-from Sprint.locators import Locators
+from Sprint_5.constants import Constants
+from Sprint_5.constants import Urls
+from Sprint_5.locators import Locators
 
 
 @pytest.fixture
 def driver():
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)
-    driver.get(Constants.URL)
+    driver.get(Urls.URL)
     yield driver
     driver.quit()
 
+@pytest.fixture
+def driver_authorisation_page():
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service)
+    driver.get(Urls.URL_AUTHORISATION_PAGE)
+    yield driver
+    driver.quit()
+
+
+@pytest.fixture
+def driver_registration_page():
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service)
+    driver.get(Urls.URL_REGISTRATION_PAGE)
+    yield driver
+    driver.quit()
 @pytest.fixture
 def login(driver):
     driver.find_element(*Locators.PERSONAL_ACCOUNT).click()

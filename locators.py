@@ -24,7 +24,8 @@ class Locators:
     SAUCE_BUTTON = (By.XPATH, '//span[contains(text(), "Соусы")]')              #раздел Соусы
     FILLINGS_BUTTON = (By.XPATH, '//span[contains(text(), "Начинки")]')         # раздел Начинки
     PROFILE = (By.XPATH, '//a[contains(@href, "/account/profile")]')            #ссылка "Профиль" в Личном кабинете
-    PAGE_LOGIN = (By.CLASS_NAME, 'Auth_login__3hAey')                           #страница авторизации пользователя
-    PAGE_RECOVERY = (By.CLASS_NAME, 'Auth_login__3hAey')                        #страница Восстановление пароля
     REGISTRATION_LINK = (By.XPATH, '//a[contains(@href, "/register")]')          #ссылка Зарегистрироваться
-    PAGE_SUBMIT = (By.XPATH, '//h2[contains(text(), "Вход")]')                   # страница авторизации https://stellarburgers.nomoreparties.site/login
+    SUBMIT_AUTHORIZATION = (By.XPATH, '//h2[contains(text(), "Вход")]')          # ссылка авторизации https://stellarburgers.nomoreparties.site/login
+    EXPECTED_VALUE_BUNS = (By.CLASS_NAME,'tab_tab__1SPyG.tab_tab_type_current__2BEPc')  #ожидаемое значение для раздела "Булки" после нажатия на него
+    EXPECTED_VALUE_SAUCE = (By.CLASS_NAME,'tab_tab__1SPyG.tab_tab_type_current__2BEPc')  # ожидаемое значение для раздела "Соусы" после нажатия на него
+    EXPECTED_VALUE_FILLINGS = (By.CLASS_NAME,'tab_tab__1SPyG.tab_tab_type_current__2BEPc')  # ожидаемое значение для раздела "Начинки" после нажатия на него
