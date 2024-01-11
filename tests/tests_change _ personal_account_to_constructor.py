@@ -5,29 +5,19 @@ from Sprint.constants import Constants
 from Sprint.locators import Locators
 import time
 
+
 class TestPersonalAccount:
-    def test_click_button_enter_to_account(self,driver):
-            '''переход по клику на «Конструктор»'''
-            driver.find_element(*Locators.ENTER_TO_ACCOUNT).click()
-            driver.find_element(*Locators.EMAIL_FIELD).send_keys(Constants.TEST_EMAIL)
-            driver.find_element(*Locators.PASSWORD_FIELD).send_keys(Constants.PASSWORD)
-            driver.find_element(*Locators.SUBMIT_BUTTON).click()
-            WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((Locators.PERSONAL_ACCOUNT)))
-            driver.find_element(*Locators.PERSONAL_ACCOUNT).click()
-            driver.find_element(*Locators.CONSTRUCTOR).click()
-            assert driver.current_url == 'https://stellarburgers.nomoreparties.site/'
-            driver.quit()
+    def test_click_button_enter_to_account(self,login):
+            '''переход из личного кабинета по клику на «Конструктор»'''
+            WebDriverWait(login, 10).until(expected_conditions.visibility_of_element_located((Locators.PERSONAL_ACCOUNT))).click()
+            login.find_element(*Locators.CONSTRUCTOR).click()
+            assert login.current_url == 'https://stellarburgers.nomoreparties.site/'
 
 
-    def test_click_logo_Stellar_Burgers(self, driver):
-            '''переход по клику на логотип Stellar Burgers'''
-            driver.find_element(*Locators.PERSONAL_ACCOUNT).click()
-            driver.find_element(*Locators.EMAIL_FIELD).send_keys(Constants.TEST_EMAIL)
-            driver.find_element(*Locators.PASSWORD_FIELD).send_keys(Constants.PASSWORD)
-            driver.find_element(*Locators.SUBMIT_BUTTON).click()
-            WebDriverWait(driver, 5).until(expected_conditions.visibility_of_element_located((Locators.PERSONAL_ACCOUNT)))
-            driver.find_element(*Locators.PERSONAL_ACCOUNT).click()
-            driver.find_element(*Locators.LOGO).click()
-            assert driver.current_url == 'https://stellarburgers.nomoreparties.site/'
-            driver.quit()
+
+    def test_click_logo_Stellar_Burgers(self, login):
+            '''переход из дичного кабинета по клику на логотип Stellar Burgers'''
+            WebDriverWait(login, 10).until(expected_conditions.visibility_of_element_located((Locators.PERSONAL_ACCOUNT))).click()
+            login.find_element(*Locators.LOGO).click()
+            assert login.current_url == 'https://stellarburgers.nomoreparties.site/'
 
