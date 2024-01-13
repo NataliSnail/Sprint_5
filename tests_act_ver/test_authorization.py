@@ -2,9 +2,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions
-from Sprint_5.constants import Constants
-from Sprint_5.constants import Urls
-from Sprint_5.locators import Locators
+from constants import Constants
+from constants import Urls
+from locators import Locators
 
 
 class TestAuthorization:

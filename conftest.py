@@ -2,9 +2,9 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-from Sprint_5.constants import Constants
-from Sprint_5.constants import Urls
-from Sprint_5.locators import Locators
+from constants import Constants
+from constants import Urls
+from locators import Locators
 
 
 @pytest.fixture
